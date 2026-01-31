@@ -17,19 +17,27 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Language/Version**: TypeScript (Node 18+) / Next.js (13+)
+**Primary Dependencies**: Next.js, React, Tailwind CSS, shadcn, tanstack/react-query, Context7 (docs)
+**Storage**: [if applicable, e.g., PostgreSQL, Vercel Edge storage, or N/A]
+**Testing**: Unit testing (Jest/Testing Library) for complex features and component tests for interactive UI
+**Target Platform**: Web (mobile-first responsive)
+**Project Type**: Web application (Next.js)
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 60 fps for animations on mobile where applicable]
+**Constraints**: Baseline mobile viewport support (360px); bundle size and accessibility targets
 **Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
+
+The following constitution gates MUST be satisfied before Phase 0 completes:
+
+- **Stack**: Projects MUST use Next.js (app router), React, Tailwind CSS, shadcn UI primitives, and tanstack/react-query.
+- **Design**: Mobile-first responsive design is required (baseline 360px). Accessibility (WCAG AA) must be considered.
+- **Testing**: Unit tests are REQUIRED for complex features and non-trivial calculations. Component/unit tests are
+  REQUIRED for critical interactive behavior. End-to-end (E2E) tests are NOT used by default.
+- **Dependencies**: New external dependencies require a documented justification and maintainer approval.
 
 [Gates determined based on constitution file]
 
@@ -48,6 +56,7 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
+
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
   for this feature. Delete unused options and expand the chosen structure with
@@ -98,7 +107,7 @@ directories captured above]
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |
