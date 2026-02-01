@@ -1,0 +1,150 @@
+{
+  "list_source": "snapshot:2026-01-31",
+  "last_updated": "2026-01-31T17:00:00Z",
+  "stocks": [
+    {
+      "ticker": "SM",
+      "company_name": "SM Investments Corporation",
+      "sector": "Conglomerates",
+      "current_price": 970.0,
+      "market_cap": 1500000000000,
+      "pe_ratio": 22.5,
+      "pb_ratio": 3.8,
+      "dividend_yield": 1.8,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "JFC",
+      "company_name": "Jollibee Foods Corporation",
+      "sector": "Consumer",
+      "current_price": 250.5,
+      "market_cap": 450000000000,
+      "pe_ratio": 30.2,
+      "pb_ratio": 8.1,
+      "dividend_yield": 0.9,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "BDO",
+      "company_name": "BDO Unibank, Inc.",
+      "sector": "Financials",
+      "current_price": 120.75,
+      "market_cap": 800000000000,
+      "pe_ratio": 14.7,
+      "pb_ratio": 1.6,
+      "dividend_yield": 2.5,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "BPI",
+      "company_name": "Bank of the Philippine Islands",
+      "sector": "Financials",
+      "current_price": 85.2,
+      "market_cap": 400000000000,
+      "pe_ratio": 12.1,
+      "pb_ratio": 1.4,
+      "dividend_yield": 3.2,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "SMC",
+      "company_name": "San Miguel Corporation",
+      "sector": "Industrials",
+      "current_price": 110.0,
+      "market_cap": 700000000000,
+      "pe_ratio": 18.0,
+      "pb_ratio": 2.2,
+      "dividend_yield": 1.2,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "ALI",
+      "company_name": "Ayala Land, Inc.",
+      "sector": "Real Estate",
+      "current_price": 33.4,
+      "market_cap": 300000000000,
+      "pe_ratio": 20.8,
+      "pb_ratio": 1.9,
+      "dividend_yield": 2.0,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "ACEN",
+      "company_name": "ACEN Corporation",
+      "sector": "Energy",
+      "current_price": 10.25,
+      "market_cap": 150000000000,
+      "pe_ratio": 45.0,
+      "pb_ratio": 6.2,
+      "dividend_yield": 0.6,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "TEL",
+      "company_name": "PLDT Inc.",
+      "sector": "Telecommunications",
+      "current_price": 1200.0,
+      "market_cap": 500000000000,
+      "pe_ratio": null,
+      "pb_ratio": 3.0,
+      "dividend_yield": 4.0,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "AEV",
+      "company_name": "Aboitiz Equity Ventures",
+      "sector": "Conglomerates",
+      "current_price": 60.5,
+      "market_cap": 260000000000,
+      "pe_ratio": 15.3,
+      "pb_ratio": null,
+      "dividend_yield": 1.6,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "MBT",
+      "company_name": "Metrobank",
+      "sector": "Financials",
+      "current_price": 34.8,
+      "market_cap": 180000000000,
+      "pe_ratio": 11.9,
+      "pb_ratio": 1.1,
+      "dividend_yield": 2.9,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "DG",
+      "company_name": "Digital Green",
+      "sector": "Technology",
+      "current_price": 5.2,
+      "market_cap": 80000000000,
+      "pe_ratio": 28.5,
+      "pb_ratio": 5.0,
+      "dividend_yield": 0.0,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    },
+    {
+      "ticker": "SMPH",
+      "company_name": "SM Prime Holdings, Inc.",
+      "sector": "Real Estate",
+      "current_price": 35.75,
+      "market_cap": 350000000000,
+      "pe_ratio": 17.5,
+      "pb_ratio": 2.0,
+      "dividend_yield": 3.1,
+      "last_trade_date": "2026-01-31T16:30:00Z",
+      "delisted": false
+    }
+  ]
+}

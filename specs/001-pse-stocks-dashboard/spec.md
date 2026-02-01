@@ -5,6 +5,13 @@
 **Status**: Draft  
 **Input**: User description: "Initial page setup. The Dashboard. The dashboard must have two columns the left contain rankings of the stocks that is undervalued and must focus on PSE stocks of blue chip stocks and the right contains the over valued stocks. The goal is to have the user to have an overview of what they can buy and what they can sell."
 
+## Clarifications
+
+### Session 2026-02-01
+
+- Q: Which data source should be used for live market and blue-chip list data? → A: **PSE official API (preferred)**. Note: this requires registration and confirmation of rate limits; if PSE API cannot be used during development, a mocked/test dataset or cached snapshot will be used as a fallback for implementation and testing.
+- Q: Who will provide PSE API credentials and maintain access? → A: **Product Owner will provide and maintain API credentials**; the implementation team will use them for integration and testing. (Recorded: 2026-02-01)
+
 ## User Scenarios & Testing _(mandatory)_
 
 **Testing policy**: Unit tests are REQUIRED for complex features and calculations. Component/unit tests are required for critical interactive behavior. End-to-end (E2E) tests are not used by default and require explicit approval.
@@ -94,14 +101,23 @@ As an investor I want to filter the lists by sector, search by ticker or company
 - **FR-008**: The system MUST show a "Last updated" timestamp and the data source for transparency.
 - **FR-009**: The system MUST handle data/API errors gracefully and provide user-friendly messages.
 - **FR-010**: The system MUST be responsive and keyboard accessible (basic a11y compliance).
+- **FR-011**: Product Owner MUST provide PSE API credentials for integration and testing; access and credentials will be made available to the implementation team prior to integration testing.
 
 ### Key Entities _(include if feature involves data)_
 
 - **Stock**: ticker, company_name, sector, current_price, market_cap, pe_ratio, pb_ratio, dividend_yield, last_trade_date
 - **ValuationScore**: stock_ticker, score (numeric), components (e.g., pe_percentile, pb_percentile), computed_at
-- **BlueChipList**: source (file or API), last_updated
+- **BlueChipList**: source (PSE official API preferred; fallback: file or mock), last_updated
 
 ## Success Criteria _(mandatory)_
+
+## Assumptions
+
+- Data source for market data and the blue-chip list: **PSE official API (preferred)**. If the PSE API is not available or access is restricted during development, the implementation will use a mocked/test dataset or cached snapshot as a fallback.
+- Product Owner will provide PSE API credentials and make them available to the implementation team before integration/testing; until credentials are provided, development will use mocked/test data.
+- Default "blue-chip" list will be the provided list from product owner or, if not provided, the top 30 companies by market cap on the PSE (configurable later).
+- Default valuation metric (MVP): composite score using normalized P/E and P/B percentiles (50% weight P/E percentile + 50% weight P/B percentile). If data missing, that stock is excluded from ranking until data is available.
+- Data refresh frequency for MVP: daily. Real-time updates are out of scope for initial implementation.
 
 <!--
   ACTION REQUIRED: Define measurable success criteria.
@@ -114,12 +130,6 @@ As an investor I want to filter the lists by sector, search by ticker or company
 - **SC-002**: Dashboard displays the top 10 items in each column correctly for the test dataset, and the ranking matches expected results for a curated reference dataset (100% match for ranking order).
 - **SC-003**: Filtering and search actions return correct results and complete within 2 seconds in a typical network environment.
 - **SC-004**: Exported CSV contains the same rows and column order as the UI view and opens correctly in spreadsheet software.
-
-## Assumptions
-
-- Default "blue-chip" list will be the provided list from product owner or, if not provided, the top 30 companies by market cap on the PSE (configurable later).
-- Default valuation metric (MVP): composite score using normalized P/E and P/B percentiles (50% weight P/E percentile + 50% weight P/B percentile). If data missing, that stock is excluded from ranking until data is available.
-- Data refresh frequency for MVP: daily. Real-time updates are out of scope for initial implementation.
 
 ---
 

@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  title: PSE Stocks Dashboard API (MVP)
+  version: 0.1.0
+servers:
+  - url: /api
+paths:
+  /blue-chips:
+    get:
+      summary: Get the current blue-chip list and top candidates
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: sector
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BlueChipsResponse"
+        "500":
+          description: Server error
+  /stocks/{ticker}:
+    get:
+      summary: Get stock details
+      parameters:
+        - name: ticker
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Stock details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Stock"
+        "404":
+          description: Not found
+  /export:
+    get:
+      summary: Export current view to CSV
+      parameters:
+        - name: sector
+          in: query
+          schema:
+            type: string
+        - name: sort
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: CSV stream
+          content:
+            text/csv:
+              schema:
+                type: string
+components:
+  schemas:
+    Stock:
+      type: object
+      properties:
+        ticker:
+          type: string
+        company_name:
+          type: string
+        sector:
+          type: string
+        current_price:
+          type: number
+        market_cap:
+          type: number
+        pe_ratio:
+          type: number
+          nullable: true
+        pb_ratio:
+          type: number
+          nullable: true
+        dividend_yield:
+          type: number
+          nullable: true
+        last_trade_date:
+          type: string
+          format: date-time
+    ValuationScore:
+      type: object
+      properties:
+        stock_ticker:
+          type: string
+        score:
+          type: number
+        components:
+          type: object
+    BlueChipsResponse:
+      type: object
+      properties:
+        list_source:
+          type: string
+        last_updated:
+          type: string
+          format: date-time
+        buy:
+          type: array
+          items:
+            $ref: "#/components/schemas/Stock"
+        sell:
+          type: array
+          items:
+            $ref: "#/components/schemas/Stock"
