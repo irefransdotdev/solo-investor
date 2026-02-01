@@ -1,0 +1,22 @@
+# eslint ignore patterns for project
+
+node_modules/
+.next/
+out/
+build/
+dist/
+coverage/
+_.min.js
+_.bundle.js
+\*.log
+.vscode/
+.idea/
+.DS_Store
+
+# TypeScript build info
+
+\*.tsbuildinfo
+
+# Env files
+
+.env\*
